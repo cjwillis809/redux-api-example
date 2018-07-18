@@ -1,0 +1,27 @@
+.list-view {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 25px;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.list-header-title {
+    font-size: 20px;
+}

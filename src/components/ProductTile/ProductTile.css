@@ -1,0 +1,10 @@
+.tileDiv {
+    text-align: left;
+    width: 300px;
+    margin: 0 10px;
+}
+
+.imageSize {
+    height: 80%;
+    width: 100%;
+}
