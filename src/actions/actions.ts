@@ -3,7 +3,6 @@ import ProductCategory from "../models/ProductCategory";
 
 export enum ActionTypes {
     REQUEST_PRODUCTS = "REQUEST_PRODUCTS", // Async
-    INVALIDATE_PRODUCTS = "INVALIDATE_PRODUCTS", // Async
     RECEIVE_PRODUCTS = "RECEIVE_PRODUCTS", // Async
     SEE_PRODUCTS = "SEE_PRODUCTS" // Sync
 }
@@ -20,10 +19,6 @@ export interface ReceiveProductsAction {
     categories: ProductCategory[],
     receivedAt: number,
     type: ActionTypes.RECEIVE_PRODUCTS
-}
-
-export interface ProductErrorAction {
-    type: ActionTypes.INVALIDATE_PRODUCTS
 }
 
 export function retrieveProducts(): SeeProductsAction {
@@ -43,12 +38,6 @@ export function receiveProducts(json: any): ReceiveProductsAction {
         categories: json,
         receivedAt: Date.now(),
         type: ActionTypes.RECEIVE_PRODUCTS
-    }
-}
-
-export function invalidateProducts(): ProductErrorAction {
-    return {
-        type: ActionTypes.INVALIDATE_PRODUCTS
     }
 }
 
@@ -73,4 +62,4 @@ export function fetchProducts(): any {
     }
 }
 
-export type Action = SeeProductsAction | FetchProductsAction | ReceiveProductsAction | ProductErrorAction
+export type Action = SeeProductsAction | FetchProductsAction | ReceiveProductsAction
